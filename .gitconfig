@@ -1,0 +1,9 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Szymon Zubek
+	email = zubekszymon@gmail.com
+[core]
+	editor = nvim
+[credential]
+	helper = manager
