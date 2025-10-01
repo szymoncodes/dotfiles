@@ -167,6 +167,7 @@ symbol = "󰏗 "
 
 [python]
 symbol = " "
+python_binary = [".venv/bin/python", "python3"]
 
 [rlang]
 symbol = "󰟔 "
