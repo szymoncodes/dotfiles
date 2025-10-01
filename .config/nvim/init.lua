@@ -31,10 +31,11 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/mbbill/undotree" },
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
 	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/supermaven-inc/supermaven-nvim" },
+	{ src = "https://github.com/szymoncodes/better-command.nvim" },
 })
 
 -- Setting the colorscheme
@@ -50,7 +51,7 @@ vim.api.nvim_set_hl(0, "Search", { bg = "none", fg = "#88c0d0" })
 -- Setting up the LSP
 require("mason").setup()
 require("nvim-treesitter.configs").setup({ ensure_installed = { "lua", "python", "regex" }, auto_install = true })
-vim.lsp.enable({ "stylua", "jedi-language-server" })
+vim.lsp.enable({ "stylua", "ruff" })
 require("supermaven-nvim").setup({})
 
 -- Setting up other plugins
@@ -62,7 +63,7 @@ require("mini.comment").setup()
 require("snacks").setup({
 	indent = { enabled = true },
 	picker = { enabled = true },
-	terminal = { enabled = true },
+	terminal = { enabled = true, win = { border = "rounded" }},
 })
 
 -- Keybinds
@@ -76,9 +77,14 @@ vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files({hidden = true}
 vim.keymap.set("n", "<leader>fh", function() Snacks.picker.help() end)
 vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end)
 vim.keymap.set("n", "<leader>fr", function() Snacks.picker.recent() end)
-vim.keymap.set("n", "<leader>t", function() Snacks.terminal.toggle() end)
+vim.keymap.set("n", "<leader>t", function() Snacks.terminal.toggle(vim.o.shell) end)
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.cmd [[set completeopt+=menuone,noselect,popup]]
+
+-- Plugin development
+vim.keymap.set("n", "<leader>u", ":lua vim.pack.update()<CR>")
+vim.keymap.set("n", "<leader><leader>x", ":source<CR>")
+require("better-command")
