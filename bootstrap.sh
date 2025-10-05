@@ -15,9 +15,6 @@ brew install git git-credential-manager fzf bat ripgrep quarto stow starship tmu
 brew install neovim --HEAD
 brew install --cask ghostty 1password 1password-cli google-chrome nikitabobko/tap/aerospace font-jetbrains-mono
 
-brew tap FelixKratz/formulae
-brew install borders
-
 echo "Configuring Mac defaults..."
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock wvous-br-corner -int 1
