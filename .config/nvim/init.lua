@@ -1,3 +1,4 @@
+local vim = vim
 -- Cursor
 vim.opt.guicursor = "n-v-i-c:block-Cursor"
 
@@ -27,6 +28,8 @@ vim.opt.undofile = true
 -- Loading plugins
 vim.pack.add({
 	{ src = "https://github.com/everviolet/nvim" },
+	{ src = "https://github.com/AlexvZyl/nordic.nvim" },
+	{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
@@ -35,7 +38,6 @@ vim.pack.add({
 	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/supermaven-inc/supermaven-nvim" },
-	{ src = "https://github.com/szymoncodes/better-command.nvim" },
 })
 
 -- Setting the colorscheme
@@ -43,7 +45,17 @@ require("evergarden").setup({
 	theme = { variant = "spring" },
 	editor = { transparent_background = true },
 })
-vim.cmd("colorscheme evergarden")
+
+require("nordic").setup({
+	transparent = { bg = true },
+})
+
+require("catppuccin").setup({
+	flavour = "mocha",
+	transparent_background = true,
+})
+vim.cmd("colorscheme catppuccin")
+vim.cmd(":hi statusline guibg=NONE")
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "Search", { bg = "none", fg = "#88c0d0" })
@@ -51,7 +63,7 @@ vim.api.nvim_set_hl(0, "Search", { bg = "none", fg = "#88c0d0" })
 -- Setting up the LSP
 require("mason").setup()
 require("nvim-treesitter.configs").setup({ ensure_installed = { "lua", "python", "regex" }, auto_install = true })
-vim.lsp.enable({ "stylua", "ruff" })
+vim.lsp.enable({ "lua_ls", "ruff" })
 require("supermaven-nvim").setup({})
 
 -- Setting up other plugins
@@ -83,8 +95,3 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.cmd [[set completeopt+=menuone,noselect,popup]]
-
--- Plugin development
-vim.keymap.set("n", "<leader>u", ":lua vim.pack.update()<CR>")
-vim.keymap.set("n", "<leader><leader>x", ":source<CR>")
-require("better-command")
