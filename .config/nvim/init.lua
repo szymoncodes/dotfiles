@@ -67,7 +67,9 @@ vim.lsp.enable({ "lua_ls", "ruff" })
 require("supermaven-nvim").setup({})
 
 -- Setting up other plugins
-require("oil").setup()
+require("oil").setup({
+	view_options = { show_hidden = true },
+})
 require("mini.surround").setup()
 require("mini.pairs").setup()
 require("mini.icons").setup()
