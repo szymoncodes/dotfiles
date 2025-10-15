@@ -13,7 +13,7 @@ brew upgrade
 
 brew install git git-credential-manager fzf bat ripgrep quarto stow starship tmux zsh-autosuggestions zsh-syntax-highlighting sk fd fastfetch gcc uv spotify gh
 brew install neovim --HEAD
-brew install --cask ghostty 1password 1password-cli google-chrome nikitabobko/tap/aerospace font-jetbrains-mono
+brew install --cask ghostty 1password 1password-cli zen nikitabobko/tap/aerospace font-jetbrains-mono
 
 echo "Configuring Mac defaults..."
 defaults write com.apple.dock autohide -bool true

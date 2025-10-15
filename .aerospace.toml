@@ -20,7 +20,7 @@ automatically-unhide-macos-hidden-apps = false
 	run = ["move-node-to-workspace 1"]
 	
 [[on-window-detected]]
-	if.app-name-regex-substring = 'Chrome'
+	if.app-name-regex-substring = 'Zen'
 	run = ["move-node-to-workspace 2"]
 
 [workspace-to-monitor-force-assignment]
