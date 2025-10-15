@@ -38,6 +38,7 @@ vim.pack.add({
 	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/supermaven-inc/supermaven-nvim" },
+	{ src = "https://github.com/benomahony/uv.nvim" },
 })
 
 -- Setting the colorscheme
@@ -63,7 +64,8 @@ vim.api.nvim_set_hl(0, "Search", { bg = "none", fg = "#88c0d0" })
 -- Setting up the LSP
 require("mason").setup()
 require("nvim-treesitter.configs").setup({ ensure_installed = { "lua", "python", "regex" }, auto_install = true })
-vim.lsp.enable({ "lua_ls", "ruff" })
+vim.lsp.enable({ "lua_ls", "pyright" })
+require("uv").setup()
 require("supermaven-nvim").setup({})
 
 -- Setting up other plugins
