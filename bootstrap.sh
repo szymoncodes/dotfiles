@@ -13,7 +13,7 @@ brew upgrade
 
 brew install git git-credential-manager fzf bat ripgrep quarto stow starship tmux zsh-autosuggestions zsh-syntax-highlighting sk fd fastfetch gcc uv spotify gh
 brew install neovim --HEAD
-brew install --cask ghostty 1password 1password-cli zen nikitabobko/tap/aerospace font-jetbrains-mono
+brew install --cask ghostty 1password 1password-cli zen nikitabobko/tap/aerospace font-jetbrains-mono figma messenger
 
 echo "Configuring Mac defaults..."
 defaults write com.apple.dock autohide -bool true
@@ -27,7 +27,7 @@ defaults write com.apple.dock persistent-apps -array \
     <dict><key>_CFURLString</key><string>/Applications/Ghostty.app</string>
     <key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>' \
   '<dict><key>tile-data</key><dict><key>file-data</key>
-    <dict><key>_CFURLString</key><string>/Applications/Google Chrome.app</string>
+    <dict><key>_CFURLString</key><string>/Applications/Zen.app</string>
     <key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>' \
   '<dict><key>tile-data</key><dict><key>file-data</key>
     <dict><key>_CFURLString</key><string>/Applications/Spotify.app</string>
