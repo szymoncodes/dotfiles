@@ -30,6 +30,7 @@ vim.pack.add({
 	{ src = "https://github.com/everviolet/nvim" },
 	{ src = "https://github.com/AlexvZyl/nordic.nvim" },
 	{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
+	{ src = "https://github.com/rose-pine/neovim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
@@ -55,7 +56,15 @@ require("catppuccin").setup({
 	flavour = "mocha",
 	transparent_background = true,
 })
-vim.cmd("colorscheme catppuccin")
+
+require("rose-pine").setup({
+	variant = "moon",
+	styles = {
+		transparency = true,
+	},
+})
+
+vim.cmd("colorscheme rose-pine")
 vim.cmd(":hi statusline guibg=NONE")
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
