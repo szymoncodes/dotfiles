@@ -64,7 +64,7 @@ require("rose-pine").setup({
 	},
 })
 
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme evergarden")
 vim.cmd(":hi statusline guibg=NONE")
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
