@@ -1,0 +1,65 @@
+{
+  "plugins": {
+    "catppuccin": {
+      "rev": "af58927c55c9f3272c940ff02b3cee94a1249f26",
+      "src": "https://github.com/catppuccin/nvim"
+    },
+    "mason.nvim": {
+      "rev": "ad7146aa61dcaeb54fa900144d768f040090bff0",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "mini.nvim": {
+      "rev": "d048db2ae04d8830b44c899b93e9052b2ad20fb7",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "neovim": {
+      "rev": "72a04c4065345b51b56aed4859ea1d884f734097",
+      "src": "https://github.com/rose-pine/neovim"
+    },
+    "nordic.nvim": {
+      "rev": "6afe957722fb1b0ec7ca5fbea5a651bcca55f3e1",
+      "src": "https://github.com/AlexvZyl/nordic.nvim"
+    },
+    "nvim": {
+      "rev": "951d0c459f5d7fff8e90e0c0803dad8faf5180ff",
+      "src": "https://github.com/everviolet/nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "ac98db2f9f06a56498ec890a96928774eae412c3",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-treesitter": {
+      "rev": "42fc28ba918343ebfd5565147a42a26580579482",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'master'"
+    },
+    "oil.nvim": {
+      "rev": "919e155fdf38e9148cdb5304faaaf53c20d703ea",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "snacks.nvim": {
+      "rev": "aaab014bc6094514cfd3fae1d3bae92b8f91d519",
+      "src": "https://github.com/folke/snacks.nvim"
+    },
+    "supermaven-nvim": {
+      "rev": "07d20fce48a5629686aefb0a7cd4b25e33947d50",
+      "src": "https://github.com/supermaven-inc/supermaven-nvim"
+    },
+    "tinymist": {
+      "rev": "968d6baac7d7c7526d3d78b401f024d6fcfa2084",
+      "src": "https://github.com/Myriad-Dreamin/tinymist"
+    },
+    "typst-preview.nvim": {
+      "rev": "bf5d5eaf23bbfcca9f98a24ed29bd084abf89bf2",
+      "src": "https://github.com/chomosuke/typst-preview.nvim"
+    },
+    "undotree": {
+      "rev": "0f1c9816975b5d7f87d5003a19c53c6fd2ff6f7f",
+      "src": "https://github.com/mbbill/undotree"
+    },
+    "uv.nvim": {
+      "rev": "be4a7d47a976249282bb2f71fc773ac2f5325973",
+      "src": "https://github.com/benomahony/uv.nvim"
+    }
+  }
+}

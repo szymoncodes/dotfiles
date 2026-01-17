@@ -40,6 +40,8 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/supermaven-inc/supermaven-nvim" },
 	{ src = "https://github.com/benomahony/uv.nvim" },
+	{ src = "https://github.com/Myriad-Dreamin/tinymist" },
+	{ src = "https://github.com/chomosuke/typst-preview.nvim" }
 })
 
 -- Setting the colorscheme
@@ -64,7 +66,7 @@ require("rose-pine").setup({
 	},
 })
 
-vim.cmd("colorscheme evergarden")
+vim.cmd("colorscheme rose-pine")
 vim.cmd(":hi statusline guibg=NONE")
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
@@ -73,7 +75,7 @@ vim.api.nvim_set_hl(0, "Search", { bg = "none", fg = "#88c0d0" })
 -- Setting up the LSP
 require("mason").setup()
 require("nvim-treesitter.configs").setup({ ensure_installed = { "lua", "python", "regex" }, auto_install = true })
-vim.lsp.enable({ "lua_ls", "pyright" })
+vim.lsp.enable({ "lua_ls", "pyright", "tinymist" })
 require("uv").setup()
 require("supermaven-nvim").setup({})
 
@@ -90,6 +92,7 @@ require("snacks").setup({
 	picker = { enabled = true },
 	terminal = { enabled = true, win = { border = "rounded" }},
 })
+require("typst-preview").setup()
 
 -- Keybinds
 vim.g.mapleader = " "
