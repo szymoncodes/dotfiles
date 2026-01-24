@@ -29,7 +29,7 @@ vim.opt.undofile = true
 vim.pack.add({
 	{ src = "https://github.com/everviolet/nvim" },
 	{ src = "https://github.com/AlexvZyl/nordic.nvim" },
-	{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
+	{ src = "https://github.com/catppuccin/nvim",                 name = "catppuccin" },
 	{ src = "https://github.com/rose-pine/neovim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
@@ -76,6 +76,18 @@ vim.api.nvim_set_hl(0, "Search", { bg = "none", fg = "#88c0d0" })
 require("mason").setup()
 require("nvim-treesitter.configs").setup({ ensure_installed = { "lua", "python", "regex" }, auto_install = true })
 vim.lsp.enable({ "lua_ls", "pyright", "tinymist" })
+vim.lsp.config["tinymist"] = {
+	settings = {
+		formatterMode = "typstyle",
+		formatterProseWrap = true,
+		formatterPrintWidth = 80,
+		formatterIndentSize = 2,
+	}
+}
+vim.diagnostic.config({
+	virtual_text = true,
+	signs = true,
+})
 require("uv").setup()
 require("supermaven-nvim").setup({})
 
@@ -90,7 +102,7 @@ require("mini.comment").setup()
 require("snacks").setup({
 	indent = { enabled = true },
 	picker = { enabled = true },
-	terminal = { enabled = true, win = { border = "rounded" }},
+	terminal = { enabled = true, win = { border = "rounded" } },
 })
 require("typst-preview").setup()
 
@@ -101,7 +113,7 @@ vim.keymap.set("n", "<leader>-", ":Oil --float<CR>")
 
 vim.keymap.set("n", "<leader>=", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files({hidden = true}) end)
+vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files({ hidden = true }) end)
 vim.keymap.set("n", "<leader>fh", function() Snacks.picker.help() end)
 vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end)
 vim.keymap.set("n", "<leader>fr", function() Snacks.picker.recent() end)
