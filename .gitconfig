@@ -2,7 +2,7 @@
 	defaultBranch = main
 [user]
 	name = Szymon Zubek
-	email = zubekszymon@gmail.com
+	email = szymon@szymonzubek.com
 [core]
 	editor = nvim
 [credential]
