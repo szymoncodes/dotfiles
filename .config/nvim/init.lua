@@ -29,7 +29,7 @@ vim.opt.undofile = true
 vim.pack.add({
 	{ src = "https://github.com/everviolet/nvim" },
 	{ src = "https://github.com/AlexvZyl/nordic.nvim" },
-	{ src = "https://github.com/catppuccin/nvim",                 name = "catppuccin" },
+	{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
 	{ src = "https://github.com/rose-pine/neovim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
@@ -63,6 +63,10 @@ require("rose-pine").setup({
 	variant = "moon",
 	styles = {
 		transparency = true,
+	},
+	highlight_groups = {
+		Cursor = { bg = "text" },
+		Visual = { bg = "highlight_high", inherit = false },
 	},
 })
 
