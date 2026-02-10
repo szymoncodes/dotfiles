@@ -38,10 +38,14 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
 	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
-	{ src = "https://github.com/supermaven-inc/supermaven-nvim" },
 	{ src = "https://github.com/benomahony/uv.nvim" },
 	{ src = "https://github.com/Myriad-Dreamin/tinymist" },
-	{ src = "https://github.com/chomosuke/typst-preview.nvim" }
+	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
+	{ src = "https://github.com/stevearc/conform.nvim" },
+	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
+	{ src = "https://github.com/rafamadriz/friendly-snippets" },
+	{ src = "https://github.com/quarto-dev/quarto-nvim" },
+	{ src = "https://github.com/jmbuhr/otter.nvim" },
 })
 
 -- Setting the colorscheme
@@ -78,22 +82,33 @@ vim.api.nvim_set_hl(0, "Search", { bg = "none", fg = "#88c0d0" })
 
 -- Setting up the LSP
 require("mason").setup()
-require("nvim-treesitter.configs").setup({ ensure_installed = { "lua", "python", "regex" }, auto_install = true })
-vim.lsp.enable({ "lua_ls", "pyright", "tinymist" })
+require("nvim-treesitter.configs").setup({
+	ensure_installed = { "lua", "python", "regex" },
+	auto_install = true,
+	highlight = { enable = true },
+})
+vim.lsp.enable({ "lua_ls", "ruff", "ty", "tinymist" })
 vim.lsp.config["tinymist"] = {
 	settings = {
 		formatterMode = "typstyle",
 		formatterProseWrap = true,
 		formatterPrintWidth = 80,
 		formatterIndentSize = 2,
-	}
+	},
 }
+require("blink.cmp").setup()
+require("conform").setup({
+	formatters_by_ft = {
+		lua = { "stylua" },
+		python = { "ruff_format", "ruff_organize_imports" },
+	},
+})
+require("quarto").setup()
 vim.diagnostic.config({
 	virtual_text = true,
 	signs = true,
 })
 require("uv").setup()
-require("supermaven-nvim").setup({})
 
 -- Setting up other plugins
 require("oil").setup({
@@ -103,7 +118,8 @@ require("mini.surround").setup()
 require("mini.pairs").setup()
 require("mini.icons").setup()
 require("mini.comment").setup()
-require("snacks").setup({
+local Snacks = require("snacks")
+Snacks.setup({
 	indent = { enabled = true },
 	picker = { enabled = true },
 	terminal = { enabled = true, win = { border = "rounded" } },
@@ -112,18 +128,20 @@ require("typst-preview").setup()
 
 -- Keybinds
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>r", ":update<CR> :source<CR>")
+vim.keymap.set("n", "<leader>r", ":update<CR> :restart<CR>")
 vim.keymap.set("n", "<leader>-", ":Oil --float<CR>")
 
-vim.keymap.set("n", "<leader>=", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>=", require("conform").format)
 
+-- stylua: ignore start
 vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files({ hidden = true }) end)
 vim.keymap.set("n", "<leader>fh", function() Snacks.picker.help() end)
 vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end)
 vim.keymap.set("n", "<leader>fr", function() Snacks.picker.recent() end)
 vim.keymap.set("n", "<leader>t", function() Snacks.terminal.toggle(vim.o.shell) end)
+-- stylua: ignore end
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-vim.cmd [[set completeopt+=menuone,noselect,popup]]
+vim.cmd([[set completeopt+=menuone,noselect,popup]])
