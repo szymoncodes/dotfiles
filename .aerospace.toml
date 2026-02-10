@@ -1,5 +1,5 @@
 after-startup-command = []
-start-at-login = false
+start-at-login = true
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 30
@@ -16,13 +16,21 @@ automatically-unhide-macos-hidden-apps = false
 	run = ["layout floating"]
 
 [[on-window-detected]]
-	if.app-name-regex-substring = 'Ghostty'
-	run = ["move-node-to-workspace 1"]
-	
-[[on-window-detected]]
-	if.app-name-regex-substring = 'Zen'
-	run = ["move-node-to-workspace 2"]
+	if.app-name-regex-substring = '1Password'
+	run = ["layout floating"]
 
+[[on-window-detected]]
+	if.app-name-regex-substring = 'Proton VPN'
+	run = ["layout floating"]
+
+# [[on-window-detected]]
+# 	if.app-name-regex-substring = 'Ghostty'
+# 	run = ["move-node-to-workspace 1"]
+#
+# [[on-window-detected]]
+# 	if.app-name-regex-substring = 'Zen'
+# 	run = ["move-node-to-workspace 2"]
+#
 [workspace-to-monitor-force-assignment]
     1 = 'secondary'
 
