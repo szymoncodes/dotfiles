@@ -73,10 +73,6 @@
     "undotree": {
       "rev": "fc28931fbfba66ab75d9af23fe46ffbbb9de6e8c",
       "src": "https://github.com/mbbill/undotree"
-    },
-    "uv.nvim": {
-      "rev": "c8fd53f23332df34a83db6c20adf7b6df054799a",
-      "src": "https://github.com/benomahony/uv.nvim"
     }
   }
 }

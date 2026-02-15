@@ -5,6 +5,7 @@ vim.opt.guicursor = "n-v-i-c:block-Cursor"
 -- Text
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
@@ -38,7 +39,6 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
 	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
-	{ src = "https://github.com/benomahony/uv.nvim" },
 	{ src = "https://github.com/Myriad-Dreamin/tinymist" },
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
@@ -99,6 +99,7 @@ vim.lsp.config["tinymist"] = {
 require("blink.cmp").setup()
 require("conform").setup({
 	formatters_by_ft = {
+		quarto = { "injected" },
 		lua = { "stylua" },
 		python = { "ruff_format", "ruff_organize_imports" },
 	},
@@ -108,7 +109,6 @@ vim.diagnostic.config({
 	virtual_text = true,
 	signs = true,
 })
-require("uv").setup()
 
 -- Setting up other plugins
 require("oil").setup({
