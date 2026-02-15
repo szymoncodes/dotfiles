@@ -23,6 +23,10 @@ automatically-unhide-macos-hidden-apps = false
 	if.app-name-regex-substring = 'Proton VPN'
 	run = ["layout floating"]
 
+[[on-window-detected]]
+	if.app-name-regex-substring = 'python'
+	run = ["layout floating"]
+
 # [[on-window-detected]]
 # 	if.app-name-regex-substring = 'Ghostty'
 # 	run = ["move-node-to-workspace 1"]
