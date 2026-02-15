@@ -55,7 +55,14 @@ require("evergarden").setup({
 })
 
 require("nordic").setup({
-	transparent = { bg = true },
+	transparent = { bg = true, float = true },
+	cursorline = { theme = "light" },
+	on_highlight = function(highlights)
+		for _, highlight in pairs(highlights) do
+			highlight.underline = false
+      highlight.bold = false
+		end
+	end,
 })
 
 require("catppuccin").setup({
@@ -74,7 +81,7 @@ require("rose-pine").setup({
 	},
 })
 
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme nordic")
 vim.cmd(":hi statusline guibg=NONE")
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
