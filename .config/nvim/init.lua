@@ -60,7 +60,7 @@ require("nordic").setup({
 	on_highlight = function(highlights)
 		for _, highlight in pairs(highlights) do
 			highlight.underline = false
-      highlight.bold = false
+			highlight.bold = false
 		end
 	end,
 })
@@ -82,7 +82,8 @@ require("rose-pine").setup({
 })
 
 vim.cmd("colorscheme nordic")
-vim.cmd(":hi statusline guibg=NONE")
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
+vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "Search", { bg = "none", fg = "#88c0d0" })
