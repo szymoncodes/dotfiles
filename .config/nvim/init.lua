@@ -28,9 +28,6 @@ vim.opt.undofile = true
 
 -- Loading plugins
 vim.pack.add({
-	{ src = "https://github.com/everviolet/nvim" },
-	{ src = "https://github.com/AlexvZyl/nordic.nvim" },
-	{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
 	{ src = "https://github.com/rose-pine/neovim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
@@ -49,27 +46,6 @@ vim.pack.add({
 })
 
 -- Setting the colorscheme
-require("evergarden").setup({
-	theme = { variant = "spring" },
-	editor = { transparent_background = true },
-})
-
-require("nordic").setup({
-	transparent = { bg = true, float = true },
-	cursorline = { theme = "light" },
-	on_highlight = function(highlights)
-		for _, highlight in pairs(highlights) do
-			highlight.underline = false
-			highlight.bold = false
-		end
-	end,
-})
-
-require("catppuccin").setup({
-	flavour = "mocha",
-	transparent_background = true,
-})
-
 require("rose-pine").setup({
 	variant = "moon",
 	styles = {
@@ -81,7 +57,7 @@ require("rose-pine").setup({
 	},
 })
 
-vim.cmd("colorscheme nordic")
+vim.cmd("colorscheme rose-pine")
 vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
 vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -131,6 +107,8 @@ Snacks.setup({
 	indent = { enabled = true },
 	picker = { enabled = true },
 	terminal = { enabled = true, win = { border = "rounded" } },
+	dim = { enabled = true },
+	toggle = { enabled = true },
 })
 require("typst-preview").setup()
 
@@ -146,10 +124,10 @@ vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files({ hidden = true
 vim.keymap.set("n", "<leader>fh", function() Snacks.picker.help() end)
 vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end)
 vim.keymap.set("n", "<leader>fr", function() Snacks.picker.recent() end)
+vim.keymap.set("n", "<leader>fb", function() Snacks.picker.buffers() end)
 vim.keymap.set("n", "<leader>t", function() Snacks.terminal.toggle(vim.o.shell) end)
+vim.keymap.set("n", "<leader>.", function() Snacks.toggle.dim():toggle() end)
 -- stylua: ignore end
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
-vim.cmd([[set completeopt+=menuone,noselect,popup]])
