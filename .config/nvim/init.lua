@@ -29,6 +29,8 @@ vim.opt.undofile = true
 -- Loading plugins
 vim.pack.add({
 	{ src = "https://github.com/rose-pine/neovim" },
+	{ src = "https://github.com/MunifTanjim/nui.nvim" },
+	{ src = "https://github.com/folke/noice.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
@@ -102,6 +104,7 @@ require("mini.surround").setup()
 require("mini.pairs").setup()
 require("mini.icons").setup()
 require("mini.comment").setup()
+require("noice").setup({})
 local Snacks = require("snacks")
 Snacks.setup({
 	indent = { enabled = true },
@@ -124,7 +127,6 @@ vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files({ hidden = true
 vim.keymap.set("n", "<leader>fh", function() Snacks.picker.help() end)
 vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end)
 vim.keymap.set("n", "<leader>fr", function() Snacks.picker.recent() end)
-vim.keymap.set("n", "<leader>fb", function() Snacks.picker.buffers() end)
 vim.keymap.set("n", "<leader>t", function() Snacks.terminal.toggle(vim.o.shell) end)
 vim.keymap.set("n", "<leader>.", function() Snacks.toggle.dim():toggle() end)
 -- stylua: ignore end
