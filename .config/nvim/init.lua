@@ -107,6 +107,7 @@ require("mini.comment").setup()
 require("noice").setup({})
 local Snacks = require("snacks")
 Snacks.setup({
+	bigfile = { enabled = true },
 	indent = { enabled = true },
 	picker = { enabled = true },
 	terminal = { enabled = true, win = { border = "rounded" } },
