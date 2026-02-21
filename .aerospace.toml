@@ -36,7 +36,10 @@ automatically-unhide-macos-hidden-apps = false
 # 	run = ["move-node-to-workspace 2"]
 #
 [workspace-to-monitor-force-assignment]
-    1 = 'secondary'
+    2 = 'secondary'
+    3 = 'secondary'
+    4 = 'secondary'
+    5 = 'secondary'
 
 [gaps]
     inner.horizontal = 10
