@@ -88,6 +88,7 @@ require("conform").setup({
 		quarto = { "injected" },
 		lua = { "stylua" },
 		python = { "ruff_format", "ruff_organize_imports" },
+		typst = { "typstyle" },
 	},
 })
 require("quarto").setup()
