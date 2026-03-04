@@ -85,6 +85,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
     alt-shift-semicolon = 'mode service'
+    alt-shift-p = 'mode polish'
 
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
@@ -96,3 +97,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-j = ['join-with down', 'mode main']
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
+
+[mode.polish.binding]
+    esc = 'mode main'
+    
