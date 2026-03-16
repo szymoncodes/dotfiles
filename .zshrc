@@ -8,6 +8,5 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 simple_ai(){
   ollama run glm-5:cloud "$*" --hidethinking
-  # opencode run "$*"
 }
 alias "??"=simple_ai
