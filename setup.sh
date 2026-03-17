@@ -11,6 +11,6 @@ sudo usermod -s /bin/zsh vscode
 echo "Shell updated."
 
 echo "Stowing dotfiles..."
-stow --ignore=".zshrc" --ignore=".aerospace.toml" --ignore=".gitconfig" --ignore=".tmux.conf" ~/dotfiles
+cd && cd dotfiles && stow --ignore=".zshrc" --ignore=".aerospace.toml" --ignore=".gitconfig" --ignore=".tmux.conf" .
 
 echo "Setup finished."
