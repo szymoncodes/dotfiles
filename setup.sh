@@ -1,14 +1,9 @@
 #!/bin/bash
-
 echo "Setup starting..."
-echo "Brew installing..."
-brew install neovim --HEAD
-brew install fzf bat ripgrep stow starship tmux zsh-autosuggestions zsh-syntax-highlighting sk fd fastfetch gcc uv gh zsh
-echo "Brew finished."
 
-echo "Changing shell to zsh..."
-sudo usermod -s /bin/zsh vscode
-echo "Shell updated."
+echo "Brew installing..."
+brew install fzf bat ripgrep stow starship zsh-autosuggestions zsh-syntax-highlighting sk fd fastfetch gcc gh
+echo "Brew finished."
 
 echo "Stowing dotfiles..."
 cd && cd dotfiles && stow --adopt . && git restore .
