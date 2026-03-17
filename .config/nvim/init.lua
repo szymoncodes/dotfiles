@@ -1,4 +1,5 @@
 local vim = vim
+vim.loader.enable()
 -- Cursor
 vim.opt.guicursor = "n-v-i-c:block-Cursor"
 
