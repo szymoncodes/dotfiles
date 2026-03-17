@@ -6,6 +6,6 @@ brew install fzf bat ripgrep stow starship zsh-autosuggestions zsh-syntax-highli
 echo "Brew finished."
 
 echo "Stowing dotfiles..."
-cd && cd dotfiles && stow --adopt . && git restore .
+cd && cd dotfiles && stow --ignore="bootstrap.sh" --ignore=".aerospace.toml" --ignore=".config/ghostty/config" --adopt . && git restore .
 
 echo "Setup finished."
