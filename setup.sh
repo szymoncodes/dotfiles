@@ -12,6 +12,8 @@ packages=(
   starship
   gcc
   tmux
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 for pkg in "${packages[@]}"; do
