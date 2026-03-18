@@ -5,7 +5,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 source ~/.zshrc
 
 echo "Brew installing..."
-brew install fzf bat ripgrep stow starship zsh-autosuggestions zsh-syntax-highlighting sk fd fastfetch gcc gh
+brew install fzf bat ripgrep stow starship zsh-autosuggestions zsh-syntax-highlighting sk fd fastfetch gcc gh python@3.14 golang npm
 echo "Brew finished."
 
 echo "Stowing dotfiles..."
