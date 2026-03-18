@@ -9,7 +9,8 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
+vim.opt.fillchars = { eob = " " }
 vim.opt.wrap = false
 
 -- UI
@@ -131,8 +132,14 @@ vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files({ hidden = true
 vim.keymap.set("n", "<leader>fh", function() Snacks.picker.help() end)
 vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end)
 vim.keymap.set("n", "<leader>fr", function() Snacks.picker.recent() end)
+vim.keymap.set("n", "<leader>fd", function() Snacks.picker.diagnostics() end)
 vim.keymap.set("n", "<leader>t", function() Snacks.terminal.toggle(vim.o.shell) end)
 vim.keymap.set("n", "<leader>.", function() Snacks.toggle.dim():toggle() end)
+vim.keymap.set("n", "<leader>fu", function() Snacks.picker.undo() end)
+vim.keymap.set("n", "<leader>gl", function() Snacks.picker.git_log() end)
+vim.keymap.set("n", "<leader>gs", function() Snacks.picker.git_status() end)
+vim.keymap.set("n", "grd", function() Snacks.picker.lsp_definitions() end)
+vim.keymap.set("n", "grr", function() Snacks.picker.lsp_references() end)
 -- stylua: ignore end
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
