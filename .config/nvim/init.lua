@@ -31,6 +31,7 @@ vim.opt.undofile = true
 -- Loading plugins
 vim.pack.add({
 	{ src = "https://github.com/rose-pine/neovim" },
+	{ src = "https://github.com/folke/tokyonight.nvim" },
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },
 	{ src = "https://github.com/folke/noice.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
@@ -61,7 +62,21 @@ require("rose-pine").setup({
 	},
 })
 
-vim.cmd("colorscheme rose-pine")
+require("tokyonight").setup({
+	transparent = true,
+	styles = {
+		sidebars = "transparent",
+		floats = "transparent",
+	},
+	on_highlights = function(hl)
+		hl.Visual = { bg = "#828bb8" }
+		hl.LineNr = { fg = "#828bb8" }
+		hl.LineNrAbove = { fg = "#828bb8" }
+		hl.LineNrBelow = { fg = "#828bb8" }
+		hl.SnacksPickerInputBorder = { fg = "#828bb8" }
+	end,
+})
+vim.cmd("colorscheme tokyonight-moon")
 vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
 vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -108,7 +123,13 @@ require("mini.surround").setup()
 require("mini.pairs").setup()
 require("mini.icons").setup()
 require("mini.comment").setup()
-require("noice").setup({})
+require("noice").setup({
+	lsp = {
+		hover = {
+			opts = { border = "rounded" },
+		},
+	},
+})
 local Snacks = require("snacks")
 Snacks.setup({
 	bigfile = { enabled = true },

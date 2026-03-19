@@ -1,5 +1,5 @@
-theme = Rose Pine Moon
-background-opacity = 0.8
+theme = TokyoNight Moon
+background-opacity = 0.9 
 background-blur = true
 macos-titlebar-style = hidden
 font-family = JetBrains Mono
