@@ -11,3 +11,4 @@ simple_ai(){
   ollama run glm-5:cloud "$*" --hidethinking
 }
 alias "??"=simple_ai
+export TERM=xterm-256color
