@@ -4,6 +4,8 @@ vim.loader.enable()
 vim.opt.guicursor = "n-v-i-c:block-Cursor"
 
 -- Text
+vim.opt.shell = "zsh"
+vim.opt.shellcmdflag = "-l -c"
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
