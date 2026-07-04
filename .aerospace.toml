@@ -35,11 +35,11 @@ automatically-unhide-macos-hidden-apps = false
 # 	if.app-name-regex-substring = 'Zen'
 # 	run = ["move-node-to-workspace 2"]
 #
-[workspace-to-monitor-force-assignment]
-    2 = 'secondary'
-    3 = 'secondary'
-    4 = 'secondary'
-    5 = 'secondary'
+# [workspace-to-monitor-force-assignment]
+#    2 = 'secondary'
+#    3 = 'secondary'
+#    4 = 'secondary'
+#    5 = 'secondary'
 
 [gaps]
     inner.horizontal = 10
