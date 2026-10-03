@@ -103,5 +103,12 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-l = ['join-with right', 'mode main']
 
 [mode.polish.binding]
-    esc = 'mode main'
+    alt-shift-p = 'mode main'
+
+    cmd-1 = 'workspace 1'
+    cmd-2 = 'workspace 2'
+    cmd-3 = 'workspace 3'
+    cmd-4 = 'workspace 4'
+    cmd-5 = 'workspace 5'
+    cmd-6 = 'workspace 6'
     
