@@ -1,4 +1,3 @@
-local vim = vim
 vim.loader.enable()
 -- Cursor
 vim.opt.guicursor = "n-v-i-c:block-Cursor"
@@ -93,6 +92,13 @@ require("nvim-treesitter.configs").setup({
 	highlight = { enable = true },
 })
 vim.lsp.enable({ "lua_ls", "ruff", "ty", "tinymist" })
+vim.lsp.config["lua_ls"] = {
+	settings = {
+		Lua = {
+			diagnostics = { globals = { "Snacks", "vim" } },
+		},
+	},
+}
 vim.lsp.config["tinymist"] = {
 	settings = {
 		formatterMode = "typstyle",
@@ -132,8 +138,7 @@ require("noice").setup({
 		},
 	},
 })
-local Snacks = require("snacks")
-Snacks.setup({
+require("snacks").setup({
 	bigfile = { enabled = true },
 	indent = { enabled = true },
 	picker = { enabled = true },
