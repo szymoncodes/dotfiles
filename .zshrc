@@ -11,5 +11,4 @@ simple_ai(){
   ollama run gpt-oss:20b-cloud --hidethinking
 }
 alias "??"=simple_ai
-export TERM=xterm-256color
 export SSH_AUTH_SOCK=/Users/szymon/.ssh/proton-pass-ssh-agent.sock
