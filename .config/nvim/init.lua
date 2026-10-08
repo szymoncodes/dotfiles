@@ -150,7 +150,7 @@ require("typst-preview").setup()
 
 -- Keybinds
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>r", ":update<CR> :restart<CR>")
+vim.keymap.set("n", "<leader>r", ":update<CR> :restart!<CR>")
 vim.keymap.set("n", "<leader>-", ":Oil --float<CR>")
 
 vim.keymap.set("n", "<leader>=", require("conform").format)
