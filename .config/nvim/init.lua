@@ -140,11 +140,11 @@ require("noice").setup({
 })
 require("snacks").setup({
 	bigfile = { enabled = true },
+	quickfile = { enabled = true },
 	indent = { enabled = true },
 	picker = { enabled = true },
-	terminal = { enabled = true, win = { border = "rounded" } },
-	dim = { enabled = true },
-	toggle = { enabled = true },
+	notifier = { enabled = true },
+	styles = { terminal = { border = "rounded" } },
 })
 require("typst-preview").setup()
 
