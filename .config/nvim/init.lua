@@ -39,7 +39,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/mbbill/undotree" },
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/Myriad-Dreamin/tinymist" },
@@ -86,11 +86,7 @@ vim.api.nvim_set_hl(0, "Search", { bg = "none", fg = "#88c0d0" })
 
 -- Setting up the LSP
 require("mason").setup()
-require("nvim-treesitter.configs").setup({
-	ensure_installed = { "lua", "python", "regex" },
-	auto_install = true,
-	highlight = { enable = true },
-})
+require("nvim-treesitter").install({ "lua", "python", "regex", "vim", "vimdoc" })
 vim.lsp.enable({ "lua_ls", "ruff", "ty", "tinymist" })
 vim.lsp.config["lua_ls"] = {
 	settings = {
