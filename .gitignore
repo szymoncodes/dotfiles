@@ -1,5 +1,25 @@
-.DS_Store
-.config/nvim/.undo/
-.config/qBittorrent/
-.config/nvim/nvim-pack-lock.json
-.config/1Password/
+# Ignore everything
+*
+
+# Apart from
+!.gitignore
+
+!.gitconfig
+!.aerospace.toml
+!.tmux.conf
+!.zshrc
+!bootstrap.sh
+!setup.sh
+
+!.config/
+!.config/gh/
+!.config/gh/*
+!.config/ghostty/
+!.config/ghostty/*
+!.config/karabiner/
+!.config/karabiner/karabiner.json
+!.config/nvim/
+!.config/nvim/*
+!.config/scripts/
+!.config/scripts/*
+!.config/starship.toml
