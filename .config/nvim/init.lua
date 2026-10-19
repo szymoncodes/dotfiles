@@ -87,7 +87,17 @@ vim.api.nvim_set_hl(0, "Search", { bg = "none", fg = "#88c0d0" })
 
 -- Setting up the LSP
 require("mason").setup()
-require("nvim-treesitter").install({ "lua", "python", "regex", "vim", "vimdoc", "toml" })
+require("nvim-treesitter").install({
+	"lua",
+	"python",
+	"regex",
+	"vim",
+	"vimdoc",
+	"toml",
+	"bash",
+	"markdown",
+	"markdown_inline",
+})
 vim.lsp.enable({ "lua_ls", "ruff", "ty", "tinymist" })
 vim.lsp.config["lua_ls"] = {
 	settings = {
@@ -130,7 +140,7 @@ require("iron.core").setup({
 			},
 		},
 		repl_open_cmd = function(bufnr)
-      local margin = math.floor(vim.o.columns * 0.025)
+			local margin = math.floor(vim.o.columns * 0.025)
 			local width = math.floor(vim.o.columns * 0.4)
 			local height = math.floor(vim.o.lines * 0.95)
 			return vim.api.nvim_open_win(bufnr, true, {
@@ -162,11 +172,15 @@ require("mini.pairs").setup()
 require("mini.icons").setup()
 require("mini.comment").setup()
 require("noice").setup({
-	lsp = {
-		hover = {
-			opts = { border = "rounded" },
-		},
-	},
+  lsp = {
+    override = {
+      ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+      ["vim.lsp.util.stylize_markdown"] = true,
+    },
+  },
+  presets = {
+    lsp_doc_border = true,
+  },
 })
 require("snacks").setup({
 	bigfile = { enabled = true },
