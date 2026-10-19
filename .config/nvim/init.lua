@@ -87,7 +87,7 @@ vim.api.nvim_set_hl(0, "Search", { bg = "none", fg = "#88c0d0" })
 
 -- Setting up the LSP
 require("mason").setup()
-require("nvim-treesitter").install({ "lua", "python", "regex", "vim", "vimdoc" })
+require("nvim-treesitter").install({ "lua", "python", "regex", "vim", "vimdoc", "toml" })
 vim.lsp.enable({ "lua_ls", "ruff", "ty", "tinymist" })
 vim.lsp.config["lua_ls"] = {
 	settings = {
