@@ -22,7 +22,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "8831fa150fa26492cfe135801fa498132f1491d2",
+      "rev": "e4e61006afcf6b399924e64b43c1168fca7b4301",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "neovim": {
@@ -42,11 +42,11 @@
       "src": "https://github.com/everviolet/nvim"
     },
     "nvim-lspconfig": {
-      "rev": "ac062d0d01c019c0dbdb798968f3e5d8b35c3853",
+      "rev": "45a3a444b710511c39abca3b60bb6e23a21e3de5",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "1a4f47b03dfe92d28de7d5654c67327ef008c9e6",
+      "rev": "29212d826054bb2948fa9d3a99eca9bf6a050eb2",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -55,7 +55,7 @@
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "otter.nvim": {
-      "rev": "0b38ccef44a805e8b378f5f6ce38aad0642c9366",
+      "rev": "6f05811621460eca983bf2cd877e63c59a40720e",
       "src": "https://github.com/jmbuhr/otter.nvim"
     },
     "quarto-nvim": {
@@ -67,7 +67,7 @@
       "src": "https://github.com/folke/snacks.nvim"
     },
     "tinymist": {
-      "rev": "8e845ebd3587cb4a50039963075a063e8b7fa385",
+      "rev": "31c3057ec2a9aed81f08256166d1ec2de2e0189a",
       "src": "https://github.com/Myriad-Dreamin/tinymist"
     },
     "tokyonight.nvim": {
