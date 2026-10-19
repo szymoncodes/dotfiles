@@ -49,6 +49,7 @@ vim.pack.add({
 	{ src = "https://github.com/rafamadriz/friendly-snippets" },
 	{ src = "https://github.com/quarto-dev/quarto-nvim" },
 	{ src = "https://github.com/jmbuhr/otter.nvim" },
+	{ src = "https://github.com/Vigemus/iron.nvim" },
 })
 
 -- Setting the colorscheme
@@ -117,6 +118,39 @@ require("quarto").setup()
 vim.diagnostic.config({
 	virtual_text = true,
 	signs = true,
+})
+require("iron.core").setup({
+	config = {
+		scratch_repl = true,
+		repl_definition = {
+			python = {
+				command = { "uv", "run", "ipython", "--no-autoindent" },
+				format = require("iron.fts.common").bracketed_paste_python,
+				block_dividers = { "# COMMAND ----------", "# %%" },
+			},
+		},
+		repl_open_cmd = function(bufnr)
+      local margin = math.floor(vim.o.columns * 0.025)
+			local width = math.floor(vim.o.columns * 0.4)
+			local height = math.floor(vim.o.lines * 0.95)
+			return vim.api.nvim_open_win(bufnr, true, {
+				relative = "editor",
+				width = width,
+				height = height,
+				col = vim.o.columns - width - margin,
+				row = math.floor((vim.o.lines - height) / 2) - 1,
+				border = "rounded",
+			})
+		end,
+	},
+	keymaps = {
+		toggle_repl = "<space>rt",
+		restart_repl = "<space>rr",
+		send_motion = "<space>sc",
+		visual_send = "<space>sc",
+		send_code_block = "<space>sb",
+		clear = "<space>cl",
+	},
 })
 
 -- Setting up other plugins
